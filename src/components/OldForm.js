@@ -1,7 +1,7 @@
 import { useFormik } from "formik";
 import React from "react";
 import * as Yup from "yup";
-const OldForm = () => {
+const Form = () => {
   const initialValues = {
     name: "",
     email: "",
@@ -58,10 +58,9 @@ const OldForm = () => {
             type="text"
             name="name"
             id="name"
-            // onChange={formik.handleChange}
-            // onBlur={formik.handleBlur}
-            // value={formik.values.name}
-            {...formik.getFieldProps("name")}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            value={formik.values.name}
           />
           {formik.touched.name && formik.errors.name ? (
             <div className="error">{formik.errors.name}</div>
@@ -74,10 +73,9 @@ const OldForm = () => {
             type="email"
             name="email"
             id="email"
-            // onChange={formik.handleChange}
-            // onBlur={formik.handleBlur}
-            // value={formik.values.email}
-            {...formik.getFieldProps("email")}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            value={formik.values.email}
           />
           {formik.touched.email && formik.errors.email ? (
             <div className="error">{formik.errors.email}</div>
@@ -90,10 +88,9 @@ const OldForm = () => {
             type="number"
             name="number"
             id="number"
-            // onChange={formik.handleChange}
-            // onBlur={formik.handleBlur}
-            // value={formik.values.number}
-            {...formik.getFieldProps("number")}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            value={formik.values.number}
           />
         </div>
 
@@ -103,10 +100,9 @@ const OldForm = () => {
             type="text"
             name="channel"
             id="channel"
-            // onChange={formik.handleChange}
-            // onBlur={formik.handleBlur}
-            // value={formik.values.channel}
-            {...formik.getFieldProps("channel")}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            value={formik.values.channel}
           />
           {formik.touched.channel && formik.errors.channel ? (
             <div className="error">{formik.errors.channel}</div>
@@ -118,4 +114,4 @@ const OldForm = () => {
   );
 };
 
-export default OldForm;
+export default Form;
