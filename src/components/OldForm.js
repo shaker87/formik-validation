@@ -1,7 +1,7 @@
 import { useFormik } from "formik";
 import React from "react";
 import * as Yup from "yup";
-const Form = () => {
+const OldForm = () => {
   const initialValues = {
     name: "",
     email: "",
@@ -46,9 +46,9 @@ const Form = () => {
     validationSchema,
   });
 
-  console.log(`formik.errors`, formik.errors);
-  console.log("formik.values :>> ", formik.values);
-  console.log("visited fields :>>", formik.touched);
+  // console.log(`formik.errors`, formik.errors);
+  // console.log("formik.values :>> ", formik.values);
+  // console.log("visited fields :>>", formik.touched);
   return (
     <div>
       <form onSubmit={formik.handleSubmit}>
@@ -114,4 +114,4 @@ const Form = () => {
   );
 };
 
-export default Form;
+export default OldForm;
