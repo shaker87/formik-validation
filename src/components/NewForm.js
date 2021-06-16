@@ -1,5 +1,5 @@
-import { Formik, Form, Field, ErrorMessage, FieldArray } from "formik";
 import React from "react";
+import { Formik, Form, Field, ErrorMessage, FieldArray } from "formik";
 import * as Yup from "yup";
 import TextError from "./TextError";
 const NewForm = () => {
@@ -18,9 +18,12 @@ const NewForm = () => {
     phNumber: [""],
   };
 
-  const onSubmit = (values) => {
+  const onSubmit = (values, onSubmitProps) => {
     const value = JSON.stringify(values);
     console.log("Form Data :>> ", value);
+    console.log(`onSubmitProps`, onSubmitProps);
+    onSubmitProps.setSubmitting(false);
+    onSubmitProps.resetForm();
   };
   // const validate = (values) => {
   //   let errors = {};
@@ -171,7 +174,9 @@ const NewForm = () => {
               />
               <ErrorMessage name="comments" component={TextError} />
             </div> */}
-            <button disabled={!formik.isValid}>Submit</button>
+            <button disabled={!formik.isValid || formik.isSubmitting}>
+              Submit
+            </button>
           </Form>
         );
       }}
